@@ -387,8 +387,8 @@ class ComposerStaticInit4d961f3c7962f01895d4f4c32d5992c8
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -506,8 +506,8 @@ class ComposerStaticInit4d961f3c7962f01895d4f4c32d5992c8
         ),
         'Fruitcake\\Cors\\' => 
         array (
-            0 => __DIR__ . '/..' . '/fruitcake/php-cors/src',
-            1 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
+            0 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
+            1 => __DIR__ . '/..' . '/fruitcake/php-cors/src',
         ),
         'Faker\\' => 
         array (
@@ -586,13 +586,17 @@ class ComposerStaticInit4d961f3c7962f01895d4f4c32d5992c8
     );
 
     public static $classMap = array (
+        'App\\AuditLog' => __DIR__ . '/../..' . '/app/AuditLog.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\AuditLogsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AuditLogsController.php',
         'App\\Http\\Controllers\\Admin\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/HomeController.php',
         'App\\Http\\Controllers\\Admin\\PaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PaymentController.php',
         'App\\Http\\Controllers\\Admin\\PermissionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PermissionsController.php',
         'App\\Http\\Controllers\\Admin\\RolesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RolesController.php',
         'App\\Http\\Controllers\\Admin\\SessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SessionController.php',
+        'App\\Http\\Controllers\\Admin\\TeamController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TeamController.php',
+        'App\\Http\\Controllers\\Admin\\TeamMembersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TeamMembersController.php',
         'App\\Http\\Controllers\\Admin\\UserSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserSessionController.php',
         'App\\Http\\Controllers\\Admin\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UsersController.php',
         'App\\Http\\Controllers\\Admin\\UssdController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UssdController.php',
@@ -623,6 +627,7 @@ class ComposerStaticInit4d961f3c7962f01895d4f4c32d5992c8
         'App\\Http\\Requests\\MassDestroyPermissionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MassDestroyPermissionRequest.php',
         'App\\Http\\Requests\\MassDestroyRoleRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MassDestroyRoleRequest.php',
         'App\\Http\\Requests\\MassDestroySessionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MassDestroySessionRequest.php',
+        'App\\Http\\Requests\\MassDestroyTeamRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MassDestroyTeamRequest.php',
         'App\\Http\\Requests\\MassDestroyUserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MassDestroyUserRequest.php',
         'App\\Http\\Requests\\MassDestroyUserSessionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MassDestroyUserSessionRequest.php',
         'App\\Http\\Requests\\MassDestroyUssdMenuRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MassDestroyUssdMenuRequest.php',
@@ -631,6 +636,7 @@ class ComposerStaticInit4d961f3c7962f01895d4f4c32d5992c8
         'App\\Http\\Requests\\StorePermissionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StorePermissionRequest.php',
         'App\\Http\\Requests\\StoreRoleRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreRoleRequest.php',
         'App\\Http\\Requests\\StoreSessionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreSessionRequest.php',
+        'App\\Http\\Requests\\StoreTeamRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreTeamRequest.php',
         'App\\Http\\Requests\\StoreUserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreUserRequest.php',
         'App\\Http\\Requests\\StoreUserSessionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreUserSessionRequest.php',
         'App\\Http\\Requests\\StoreUssdMenuRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreUssdMenuRequest.php',
@@ -641,11 +647,13 @@ class ComposerStaticInit4d961f3c7962f01895d4f4c32d5992c8
         'App\\Http\\Requests\\UpdateProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateProfileRequest.php',
         'App\\Http\\Requests\\UpdateRoleRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateRoleRequest.php',
         'App\\Http\\Requests\\UpdateSessionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateSessionRequest.php',
+        'App\\Http\\Requests\\UpdateTeamRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateTeamRequest.php',
         'App\\Http\\Requests\\UpdateUserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateUserRequest.php',
         'App\\Http\\Requests\\UpdateUserSessionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateUserSessionRequest.php',
         'App\\Http\\Requests\\UpdateUssdMenuRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateUssdMenuRequest.php',
         'App\\Http\\Requests\\UpdateUssdRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateUssdRequest.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Notifications\\TeamMemberInvite' => __DIR__ . '/../..' . '/app/Notifications/TeamMemberInvite.php',
         'App\\Payment' => __DIR__ . '/../..' . '/app/Payment.php',
         'App\\Permission' => __DIR__ . '/../..' . '/app/Permission.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
@@ -655,6 +663,9 @@ class ComposerStaticInit4d961f3c7962f01895d4f4c32d5992c8
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Role' => __DIR__ . '/../..' . '/app/Role.php',
         'App\\Session' => __DIR__ . '/../..' . '/app/Session.php',
+        'App\\Team' => __DIR__ . '/../..' . '/app/Team.php',
+        'App\\Traits\\Auditable' => __DIR__ . '/../..' . '/app/Traits/Auditable.php',
+        'App\\Traits\\MultiTenantModelTrait' => __DIR__ . '/../..' . '/app/Traits/MultiTenantModelTrait.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\UserSession' => __DIR__ . '/../..' . '/app/UserSession.php',
         'App\\Ussd' => __DIR__ . '/../..' . '/app/Ussd.php',
@@ -6215,6 +6226,7 @@ class ComposerStaticInit4d961f3c7962f01895d4f4c32d5992c8
         'Tests\\Browser\\PermissionsTest' => __DIR__ . '/../..' . '/tests/Browser/PermissionsTest.php',
         'Tests\\Browser\\RolesTest' => __DIR__ . '/../..' . '/tests/Browser/RolesTest.php',
         'Tests\\Browser\\SessionTest' => __DIR__ . '/../..' . '/tests/Browser/SessionTest.php',
+        'Tests\\Browser\\TeamTest' => __DIR__ . '/../..' . '/tests/Browser/TeamTest.php',
         'Tests\\Browser\\UserSessionTest' => __DIR__ . '/../..' . '/tests/Browser/UserSessionTest.php',
         'Tests\\Browser\\UsersTest' => __DIR__ . '/../..' . '/tests/Browser/UsersTest.php',
         'Tests\\Browser\\UssdMenuTest' => __DIR__ . '/../..' . '/tests/Browser/UssdMenuTest.php',
