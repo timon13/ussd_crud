@@ -33,6 +33,10 @@ class UpdateSessionRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'level' => [
+                'string',
+                'nullable',
+            ],
             'title' => [
                 'string',
                 'nullable',

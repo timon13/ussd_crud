@@ -51,6 +51,16 @@
                 <span class="help-block">{{ trans('cruds.session.fields.ussd_string_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="level">{{ trans('cruds.session.fields.level') }}</label>
+                <input class="form-control {{ $errors->has('level') ? 'is-invalid' : '' }}" type="text" name="level" id="level" value="{{ old('level', $session->level) }}">
+                @if($errors->has('level'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('level') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.session.fields.level_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label for="title">{{ trans('cruds.session.fields.title') }}</label>
                 <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $session->title) }}">
                 @if($errors->has('title'))

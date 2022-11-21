@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'site_title' => 'USSD_FINAL',
+    'site_title' => 'TAIFA MOBILE USSD',
 ];

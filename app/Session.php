@@ -23,6 +23,7 @@ class Session extends Model
         'service_code',
         'msisdn',
         'ussd_string',
+        'level',
         'title',
         'menu',
         'selection',

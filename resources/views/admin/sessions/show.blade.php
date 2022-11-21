@@ -57,6 +57,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.session.fields.level') }}
+                        </th>
+                        <td>
+                            {{ $session->level }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.session.fields.title') }}
                         </th>
                         <td>

@@ -10,139 +10,119 @@
 
                 <div class="card-body">
                     @if(session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     <div class="row">
+
                         {{-- Widget - latest entries --}}
                         <div class="{{ $settings1['column_class'] }}" style="overflow-x: auto;">
-                            <h3>{{ $settings1['chart_title'] }}</h3>
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        @foreach($settings1['fields'] as $key => $value)
-                                            <th>
-                                                {{ trans(sprintf('cruds.%s.fields.%s', $settings1['translation_key'] ?? 'pleaseUpdateWidget', $key)) }}
-                                            </th>
-                                        @endforeach
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse($settings1['data'] as $entry)
-                                        <tr>
-                                            @foreach($settings1['fields'] as $key => $value)
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $settings1['chart_title'] }}</h5>
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                @foreach($settings1['fields'] as $key => $value)
+                                                <th>
+                                                    {{ trans(sprintf('cruds.%s.fields.%s', $settings1['translation_key'] ?? 'pleaseUpdateWidget', $key)) }}
+                                                </th>
+                                                @endforeach
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @forelse($settings1['data'] as $entry)
+                                            <tr>
+                                                @foreach($settings1['fields'] as $key => $value)
                                                 <td>
                                                     @if($value === '')
-                                                        {{ $entry->{$key} }}
+                                                    {{ $entry->{$key} }}
                                                     @elseif(is_iterable($entry->{$key}))
-                                                        @foreach($entry->{$key} as $subEentry)
-                                                            <span class="label label-info">{{ $subEentry->{$value} }}</span>
-                                                        @endforeach
+                                                    @foreach($entry->{$key} as $subEentry)
+                                                    <span class="label label-info">{{ $subEentry->{$value} }}</span>
+                                                    @endforeach
                                                     @else
-                                                        {{ data_get($entry, $key . '.' . $value) }}
+                                                    {{ data_get($entry, $key . '.' . $value) }}
                                                     @endif
                                                 </td>
-                                            @endforeach
-                                        </tr>
-                                        @empty
-                                        <tr>
-                                            <td colspan="{{ count($settings1['fields']) }}">{{ __('No entries found') }}</td>
-                                        </tr>
-                                    @endforelse
-                                </tbody>
-                            </table>
+                                                @endforeach
+                                            </tr>
+                                            @empty
+                                            <tr>
+                                                <td colspan="{{ count($settings1['fields']) }}">
+                                                    {{ __('No entries found') }}
+                                                </td>
+                                            </tr>
+                                            @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
 
                         {{-- Widget - latest entries --}}
                         <div class="{{ $settings2['column_class'] }}" style="overflow-x: auto;">
-                            <h3>{{ $settings2['chart_title'] }}</h3>
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        @foreach($settings2['fields'] as $key => $value)
-                                            <th>
-                                                {{ trans(sprintf('cruds.%s.fields.%s', $settings2['translation_key'] ?? 'pleaseUpdateWidget', $key)) }}
-                                            </th>
-                                        @endforeach
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse($settings2['data'] as $entry)
-                                        <tr>
-                                            @foreach($settings2['fields'] as $key => $value)
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $settings2['chart_title'] }}</h5>
+                                    <table class="table  table-striped">
+                                        <thead>
+                                            <tr>
+                                                @foreach($settings2['fields'] as $key => $value)
+                                                <th>
+                                                    {{ trans(sprintf('cruds.%s.fields.%s', $settings2['translation_key'] ?? 'pleaseUpdateWidget', $key)) }}
+                                                </th>
+                                                @endforeach
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @forelse($settings2['data'] as $entry)
+                                            <tr>
+                                                @foreach($settings2['fields'] as $key => $value)
                                                 <td>
                                                     @if($value === '')
-                                                        {{ $entry->{$key} }}
+                                                    {{ $entry->{$key} }}
                                                     @elseif(is_iterable($entry->{$key}))
-                                                        @foreach($entry->{$key} as $subEentry)
-                                                            <span class="label label-info">{{ $subEentry->{$value} }}</span>
-                                                        @endforeach
+                                                    @foreach($entry->{$key} as $subEentry)
+                                                    <span class="label label-info">{{ $subEentry->{$value} }}</span>
+                                                    @endforeach
                                                     @else
-                                                        {{ data_get($entry, $key . '.' . $value) }}
+                                                    {{ data_get($entry, $key . '.' . $value) }}
                                                     @endif
                                                 </td>
-                                            @endforeach
-                                        </tr>
-                                        @empty
-                                        <tr>
-                                            <td colspan="{{ count($settings2['fields']) }}">{{ __('No entries found') }}</td>
-                                        </tr>
-                                    @endforelse
-                                </tbody>
-                            </table>
+                                                @endforeach
+                                            </tr>
+                                            @empty
+                                            <tr>
+                                                <td colspan="{{ count($settings2['fields']) }}">
+                                                    {{ __('No entries found') }}
+                                                </td>
+                                            </tr>
+                                            @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="{{ $chart3->options['column_class'] }}">
-                            <h3>{!! $chart3->options['chart_title'] !!}</h3>
-                            {!! $chart3->renderHtml() !!}
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{!! $chart3->options['chart_title'] !!}</h5>
+                                    {!! $chart3->renderHtml() !!}
+                                </div>
+                            </div>
                         </div>
+
                         <div class="{{ $chart4->options['column_class'] }}">
-                            <h3>{!! $chart4->options['chart_title'] !!}</h3>
-                            {!! $chart4->renderHtml() !!}
-                        </div>
-                        <div class="{{ $chart5->options['column_class'] }}">
-                            <h3>{!! $chart5->options['chart_title'] !!}</h3>
-                            {!! $chart5->renderHtml() !!}
-                        </div>
-                        {{-- Widget - latest entries --}}
-                        <div class="{{ $settings6['column_class'] }}" style="overflow-x: auto;">
-                            <h3>{{ $settings6['chart_title'] }}</h3>
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        @foreach($settings6['fields'] as $key => $value)
-                                            <th>
-                                                {{ trans(sprintf('cruds.%s.fields.%s', $settings6['translation_key'] ?? 'pleaseUpdateWidget', $key)) }}
-                                            </th>
-                                        @endforeach
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse($settings6['data'] as $entry)
-                                        <tr>
-                                            @foreach($settings6['fields'] as $key => $value)
-                                                <td>
-                                                    @if($value === '')
-                                                        {{ $entry->{$key} }}
-                                                    @elseif(is_iterable($entry->{$key}))
-                                                        @foreach($entry->{$key} as $subEentry)
-                                                            <span class="label label-info">{{ $subEentry->{$value} }}</span>
-                                                        @endforeach
-                                                    @else
-                                                        {{ data_get($entry, $key . '.' . $value) }}
-                                                    @endif
-                                                </td>
-                                            @endforeach
-                                        </tr>
-                                        @empty
-                                        <tr>
-                                            <td colspan="{{ count($settings6['fields']) }}">{{ __('No entries found') }}</td>
-                                        </tr>
-                                    @endforelse
-                                </tbody>
-                            </table>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{!! $chart4->options['chart_title'] !!}</h5>
+                                    {!! $chart4->renderHtml() !!}
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -154,5 +134,6 @@
 @endsection
 @section('scripts')
 @parent
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>{!! $chart3->renderJs() !!}{!! $chart4->renderJs() !!}{!! $chart5->renderJs() !!}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>{!! $chart3->renderJs() !!}{!!
+$chart4->renderJs() !!}{{--{!! $chart5->renderJs() !!}--}}
 @endsection

@@ -30,6 +30,9 @@
                             {{ trans('cruds.session.fields.ussd_string') }}
                         </th>
                         <th>
+                            {{ trans('cruds.session.fields.level') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.session.fields.title') }}
                         </th>
                         <th>
@@ -72,6 +75,9 @@
                             </td>
                             <td>
                                 {{ $session->ussd_string ?? '' }}
+                            </td>
+                            <td>
+                                {{ $session->level ?? '' }}
                             </td>
                             <td>
                                 {{ $session->title ?? '' }}
